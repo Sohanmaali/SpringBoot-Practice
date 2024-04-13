@@ -58,9 +58,19 @@ public class SpringBootWebApplication {
 
 //		Delete Data
 
-		repository.deleteById(4);
+//		repository.deleteById(4);
+//
+//		Iterable<User> user = repository.findAll();
+//		user.forEach(u -> System.out.println(u));
 
-		Iterable<User> user = repository.findAll();
-		user.forEach(u -> System.out.println(u));
+		// Custome Method
+//		List<User> e = repository.findByName("mohan");
+//
+//		e.forEach(e1 -> System.out.println(e1));
+
+		// Custome Query
+		// List<User> u = repository.getAllUse()u.forEach(e1 -> System.out.println(e1));
+
+		repository.getUserByName("rohan").forEach(e1 -> System.out.println(e1));
 	}
 }
