@@ -1,6 +1,8 @@
 package com.api.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -24,7 +26,6 @@ public class BookService {
 		try {
 			return bookRepository.findById(id);
 		} catch (Exception e) {
-			// TODO: handle exception
 			System.out.println(e);
 		}
 		return null;
@@ -52,34 +53,34 @@ public class BookService {
 	// list.add(new Book(4, "c", "sohan"));
 	// list.add(new Book(5, "c++", "sohan"));
 	// }
-	//
+
 	// public List<Book> getAllBook() {
 	// return list;
 	// }
-	//
+
 	// public Book getBookById(int id) {
 	// Book book = null;
 	// book = list.stream().filter(e -> e.getId() == id).findFirst().get();
 	// return book;
 	// }
-	//
+
 	// public Book addBook(Book book) {
 	// list.add(book);
 	// return book;
 	// }
-	//
+
 	// public void deleteBook(int id) {
 	// list = list.stream().filter(book -> book.getId() !=
 	// id).collect(Collectors.toList());
 	// }
-	//
+
 	// public void updateBook(Book book, int id) {
 	// list = list.stream().map(b -> {
 	// if (b.getId() == id) {
-	//
+
 	// b.setAuthor(book.getAuthor());
 	// b.setTitle(book.getTitle());
-	//
+
 	// }
 	// return b;
 	// }).collect(Collectors.toList());
