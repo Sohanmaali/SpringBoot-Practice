@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.api.entities.Book;
 import com.api.service.BookService;
 
-@Controller
 @RestController
 public class BookController {
 
@@ -26,17 +25,21 @@ public class BookController {
 	private BookService bookService;
 
 	@GetMapping("/books")
-//	@ResponseBody
-	public ResponseEntity<List<Book>> getBooks() {
+	public String getBooks() {
 
-		List<Book> list = this.bookService.getAllBook();
-
-		if (list.size() <= 0) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-		}
-
-		return ResponseEntity.of(Optional.of(list));
+		return "Index page";
 	}
+	// @GetMapping("/books")
+	// public ResponseEntity<List<Book>> getBooks() {
+
+	// List<Book> list = this.bookService.getAllBook();
+
+	// if (list.size() <= 0) {
+	// return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+	// }
+
+	// return ResponseEntity.of(Optional.of(list));
+	// }
 
 	@GetMapping("/book/{id}")
 	public ResponseEntity<Book> getBook(@PathVariable("id") int id) {

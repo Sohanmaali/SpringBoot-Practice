@@ -1,5 +1,0 @@
-spring.application.name=SpringBoot-web
-
-spring.mvc.view.prefix=/views/
-
-spring.mvc.view.suffix=.jsp
