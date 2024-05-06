@@ -23,11 +23,6 @@ public class BookController {
 	@Autowired
 	private BookService bookService;
 
-	// @GetMapping("/books")
-	// public String getBooks() {
-
-	// return "Index page";
-	// }
 	@GetMapping("/books")
 	public ResponseEntity<List<Book>> getBooks() {
 
@@ -40,7 +35,6 @@ public class BookController {
 		return ResponseEntity.of(Optional.of(list));
 	}
 
-	
 	@GetMapping("/book/{id}")
 	public ResponseEntity<Book> getBook(@PathVariable("id") int id) {
 

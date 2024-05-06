@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+	<h1>Print Collection</h1>
+
+
+	<ul>
+		<li th:each="n,status:${list}"><span
+			th:text="${status.index}+'  '+${n}"></span></li>
+
+	</ul>
+
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="user/userbase::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+<body>
+	<section class="vh-100 gradient-custom">
+		<div class="container h-100">
+			<div class="row justify-content-center align-items-center">
+				<div class="col-12 col-lg-9 col-xl-7">
+					<h1 class="text-center">Add Contact</h1>
+					<div class="card shadow-2-strong card-registration"
+						style="border-radius: 15px">
+						<div class="card-body p-md-5">
+							<!-- form add -->
+							<h2>Create Contact</h2>
+							<form action="#" th:action="@{/user/saveContact}" method="post"
+								th:object="${contact}" enctype="multipart/form-data">
+								<div class="row">
+									<!--=========NAME======== -->
+									<div class="col-md-6 mb-3">
+										<div data-mdb-input-init class="form-outline">
+											<label class="form-label" for="firstName">First Name</label>
+											<input type="text" id="firstName" name="name"
+												th:value="${contact.name}"
+												placeholder="Enter Contact Name Here"
+												th:classappend="${#fields.hasErrors('name')} ? 'is-invalid' : ''"
+												class="form-control form-control-lg fs-6" />
+
+											<div id="validationServer03Feedback" class="invalid-feedback"
+												th:if="${#fields.hasErrors('name')}">
+												<div th:each="e : ${#fields.errors('name')}" th:text="${e}"></div>
+											</div>
+										</div>
+									</div>
+
+									<!--=========LAST NAME======== -->
+									<div class="col-md-6 mb-3">
+										<div data-mdb-input-init class="form-outline">
+											<label class="form-label" for="lastName">Last Name</label> <input
+												type="text" id="lastName" name="secondName"
+												class="form-control form-control-lg fs-6"
+												th:valuex="${contact.secondName}" />
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+
+									<!--=========Email======== -->
+									<div class="col-md-6 mb-4 d-flex align-items-center">
+										<div data-mdb-input-init class="form-outline datepicker w-100">
+											<label for="email" class="form-label">E-mail</label> <input
+												type="email" class="form-control form-control-lg fs-6"
+												id="email"
+												th:classappend="${#fields.hasErrors('name')} ? 'is-invalid' : ''"
+												name="email" th:value="${contact.email}" />
+
+											<div id="validationServer03Feedback" class="invalid-feedback"
+												th:if="${#fields.hasErrors('email')}">
+												<div th:each="e : ${#fields.errors('email')}" th:text="${e}"></div>
+											</div>
+										</div>
+									</div>
+
+									<!--=========Work======== -->
+									<div class="col-md-6 mb-4 d-flex align-items-center">
+										<div data-mdb-input-init class="form-outline datepicker w-100">
+											<label for="Work" class="form-label">Work</label> <input
+												type="text" class="form-control form-control-lg fs-6"
+												id="work" name="work" th:value="${contact.work}" />
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<!--=========mobile======== -->
+									<div class="col-md-6 mb-4 pb-2">
+										<div data-mdb-input-init class="form-outline">
+											<label class="form-label" for="mobile">mobile</label> <input
+												type="tel" id="mobile" name="mobile"
+												class="form-control form-control-lg fs-6"
+												th:classappend="${#fields.hasErrors('mobile')} ? 'is-invalid' : ''"
+												th:value="${contact.mobile}" />
+
+											<div id="validationServer03Feedback" class="invalid-feedback"
+												th:if="${#fields.hasErrors('mobile')}">
+												<div th:each="e : ${#fields.errors('mobile')}"
+													th:text="${e}"></div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 mb-4 pb-2">
+										<div data-mdb-input-init class="form-outline">
+											<label class="form-label" for="image">image</label>
+											<!-- <input
+												type="file" name="image" id="image"
+												class="form-control form-control-lg" /> -->
+											<!--< input id="input-file" type="file" name="image"
+												accept="image/png, image/jpeg" /> -->
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<!--=========Descreption======== -->
+
+									<div class="col-md-12 mb-4 pb-2">
+										<div data-mdb-input-init class="form-outline">
+											<label class="form-label" for="descreption">Descreption</label>
+											<textarea cols="10" name="descreption"
+												class="form-control form-control-lg fs-6"
+												th:value="${contact.descreption}" id="editor">
+                        </textarea>
+										</div>
+									</div>
+								</div>
+
+								<div class="mt-4 pt-2">
+									<button data-mdb-button-init data-mdb-ripple-init
+										class="btn btn-primary btn-lg" type="submit" value="Submit">
+										Submit</button>
+								</div>
+							</form>
+
+							<!-- form add -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
+		<script>
+			tinymce.init({
+				selector : '#editor'
+			});
+		</script>
+	</section>
+</body>
+</html>

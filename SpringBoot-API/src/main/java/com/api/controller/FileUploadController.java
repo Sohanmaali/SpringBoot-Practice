@@ -31,7 +31,7 @@ public class FileUploadController {
         try {
             if (fileUploadHelper.uploadFile(file)) {
                 // return ResponseEntity.ok("file upload successFully");
-                return ResponseEntity.ok(ServletUriComponentsBuilder.fromCurrentContextPath().path("/images")
+                return ResponseEntity.ok(ServletUriComponentsBuilder.fromCurrentContextPath().path("/images/")
                         .path(file.getOriginalFilename()).toUriString());
             }
         } catch (Exception e) {

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Service page</h1>
+	<hr>
+	<!-- <footer id = "hostTag" th:include="footer::footer1"></footer> -->
+	<footer id="hostTag"
+		th:replace="footer::footer1('Main Footer','subfooter')"></footer>
+</body>
+</html>

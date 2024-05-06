@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<!-- Consider using UTF-8 encoding -->
+<title>Success</title>
+</head>
+<body>
+	<h1 align="center">Success</h1>
+	<!-- Displaying username and email using Thymeleaf expressions -->
+	<h1 th:text="${formData.username}"></h1>
+	<h1 th:text="${formData.email}"></h1>
+</body>
+</html>

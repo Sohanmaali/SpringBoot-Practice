@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<footer th:fragment="footer1(title,subtitle)">
+		<center>
+			<h1 th:text="${title}">Footer</h1>
+			<h3 th:text="${subtitle}">Footer</h3>
+		</center>
+		<div>this is a footer</div>
+		<hr>
+	</footer>
+</body>
+</html>

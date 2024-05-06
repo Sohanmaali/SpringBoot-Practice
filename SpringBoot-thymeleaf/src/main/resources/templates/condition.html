@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Condition Hendler</h1>
+	<h1>
+		use is <span th:style="${isActive}?'color:green':'color:red'"
+			th:text="${isActive}? 'ACTIVE' : 'NOT ACTIVE'"></span>
+	</h1>
+	<br>
+	<hr>
+	<h1 th:if="${gender}=='M'">Male</h1>
+	<h1 th:unless="${gender}=='M'">Female</h1>
+	<br>
+	<hr>
+	
+	<div th:switch="${#lists.size(myList)}">
+		<h1 th:case="'0'">ZERO Element</h1>
+		<h1 th:case="'1'">One Element</h1>
+		<h1 th:case="'2'">Two Element</h1>
+		<h1 th:case="'3'">three Element</h1>
+		<h1 th:case="*">More then Tree Element</h1>
+	</div>
+</body>
+</html>

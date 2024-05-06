@@ -45,10 +45,8 @@ public class FileUploadHelper {
                     Paths.get(FILE_PATH + File.separator + multipartFile.getOriginalFilename()),
                     StandardCopyOption.REPLACE_EXISTING);
             b = true;
-            // Path.
             return b;
         } catch (Exception e) {
-            // TODO: handle exception
             System.out.println(e);
         }
 

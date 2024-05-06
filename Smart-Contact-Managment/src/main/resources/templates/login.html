@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Home Page</title>
+
+</head>
+<body>
+	<section>
+		<section class="vh-100">
+			<div class="container-fluid h-custom">
+				<div
+					class="row d-flex justify-content-center align-items-center h-100">
+					<div class="col-md-9 col-lg-6 col-xl-5">
+						<img
+							src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+							class="img-fluid" alt="Sample image">
+					</div>
+					<div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1  p-3 mt-5">
+
+
+						<div class="card bg-info">
+							<div class="card-body px-4 py-5 px-md-5">
+								<h3 class="text-center pb-3">Login Form</h3>
+
+
+
+								<form th:action="@{/loginData}" method="post"
+									th:object="${user}">
+
+
+
+									<!-- Email input -->
+									<div data-mdb-input-init class="form-outline mb-4">
+										<label class="form-label" for="userEmail">Email
+											address*</label> <input type="email" id="userEmail" name="userEmail"
+											class="form-control" th:value="${user.userEmail}"
+											th:classappend="${#fields.hasErrors('userEmail')} ? 'is-invalid' : ''" />
+
+										<div id="validationServer03Feedback" class="invalid-feedback"
+											th:if="${#fields.hasErrors('userEmail')}">
+											<div th:each="e : ${#fields.errors('userEmail')}"
+												th:text="${e}"></div>
+										</div>
+
+									</div>
+
+									<!-- Password input -->
+									<div data-mdb-input-init class="form-outline mb-4">
+										<label class="form-label" for="password">Password*</label> <input
+											type="password" id="password" name="password"
+											class="form-control"
+											th:classappend="${#fields.hasErrors('password')} ? 'is-invalid' : ''" />
+
+										<div id="validationServer03Feedback" class="invalid-feedback"
+											th:if="${#fields.hasErrors('password')}">
+											<div th:each="e : ${#fields.errors('password')}"
+												th:text="${e}"></div>
+										</div>
+									</div>
+
+
+
+									<!-- Checkbox -->
+									<div class="form-check d-flex justify-content-center mb-4">
+										<input class="form-check-input me-2" type="checkbox"
+											name="checkbox" id="checkBox" /> <label
+											class="form-check-label" for="checkBox"> Accept terms
+											and condition </label>
+									</div>
+
+									<!-- Submit button -->
+									<div class="text-center">
+										<button type="submit" class="btn btn-primary btn-block mb-4 ">Login</button>
+										<button type="reset" class="btn btn-danger btn-block mb-4 ">Reset</button>
+									</div>
+
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</section>
+	</section>
+</body>
+</html>
