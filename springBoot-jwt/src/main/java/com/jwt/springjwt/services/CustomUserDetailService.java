@@ -1,2 +1,4 @@
-package com.jwt.springjwt.services;public class CustomUserDetailService {
+package com.jwt.springjwt.services;
+
+public class CustomUserDetailService {
 }
